@@ -3,7 +3,7 @@ import CardsView from "./../views/cardsView.js"
 import CardsService from "./../services/cardsService.js"
 const [rootPath] = window.location.href.split('/pages/')
 
-const cardListWorker = new Worker(`${rootPath}/pages/titles/src/workers/cardListWorker.js`, { type: "module" })
+const cardListWorker = new Worker('./src/workers/cardListWorker.js', { type: "module" })
 
 const factory = {
   async initalize() {
