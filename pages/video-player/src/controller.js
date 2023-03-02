@@ -29,6 +29,7 @@ export default class Controller {
       }
       const blinked = data.blinked
       this.#blinkCounter += 1
+      this.#view.togglePlayVideo()
       console.log('blinked', blinked)
     }
 
@@ -54,7 +55,8 @@ export default class Controller {
   }
 
   log(text) {
-    this.#view.log(`logger: ${text}`)
+    const times = `      - blinked times ${this.#blinkCounter}`
+    this.#view.log(`status: ${text}`.concat(this.#blinkCounter ? times : ""))
   }
 
   onBtnStart() {
