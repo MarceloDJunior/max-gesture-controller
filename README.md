@@ -19,9 +19,9 @@ Marque esse projeto com uma estrela 🌟
 ## Checklist Features
 - Titles List
   - [x] - Campo para pesquisa não deve travar ao digitar termo de pesquisa
-  - [] - Deve desenhar mãos na tela e fazer com que elementos em segundo plano  continuem sendo clicáveis  🙌
-  - [] - Deve disparar scroll up quando usar a palma das mãos abertas 🖐
-  - [] - Deve disparar scroll down quando usar a palma das mãos fechadas ✊
+  - [] - Deve desenhar mãos na tela e fazer com que elementos em segundo plano continuem sendo clicáveis 🙌
+  - [x] - Deve disparar scroll up quando usar a palma das mãos abertas 🖐
+  - [x] - Deve disparar scroll down quando usar a palma das mãos fechadas ✊
   - [] - Deve disparar click no elemento mais próximo quando usar  gesto de pinça 🤏🏻
   - [] - Ao mover elementos na tela, deve disparar evento **:hover** em elementos em contexto
 
