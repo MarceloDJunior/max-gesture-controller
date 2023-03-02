@@ -21,14 +21,14 @@ async function getWorker() {
 }
 
 const worker = await getWorker()
+const camera = await Camera.init()
 
-const camera = Camera.init()
 const factory = {
   async initalize() {
     return Controller.initialize({
       view: new View(),
-      service: new Service({}),
-      worker
+      worker,
+      camera
     })
   }
 }
