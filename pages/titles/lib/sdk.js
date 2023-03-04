@@ -324,17 +324,18 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
           bg_image.style.backgroundImage = `url(${chosen_card.background})`
           let image_cover = document.createElement("div")
 
-          let close_btn = document.createElement("div")
-          close_btn.classList.add("close-btn")
-          close_btn.innerHTML = `<svg fill="currentColor" viewBox="0 0 16 16">
+          let close_div = document.createElement("div")
+          close_div.classList.add("close-btn")
+          close_div.innerHTML = `<svg fill="currentColor" viewBox="0 0 16 16">
   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 </svg>`
+          const close_btn = close_div.querySelector('svg')
 
-          close_btn.addEventListener("click", function () {
-            this.parentElement.parentElement.parentElement.parentElement.remove()
+          close_btn.addEventListener("click", function (event) {
+            this.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
           })
 
-          image_cover.append(close_btn)
+          image_cover.append(close_div)
           bg_image.append(image_cover)
 
           let top_info = document.createElement("div")
@@ -547,17 +548,19 @@ const AddBrowseSearchCards = ({ cards, itemsPerLine }) => {
           bg_image.style.backgroundImage = `url(${chosen_card.background})`
           let image_cover = document.createElement("div")
 
-          let close_btn = document.createElement("div")
-          close_btn.classList.add("close-btn")
-          close_btn.innerHTML = `<svg fill="currentColor" viewBox="0 0 16 16">
+          let close_div = document.createElement("div")
+          close_div.classList.add("close-btn")
+          close_div.innerHTML = `<svg fill="currentColor" viewBox="0 0 16 16">
   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 </svg>`
 
+          const close_btn = close_div.querySelector('svg')
+
           close_btn.addEventListener("click", function () {
-            this.parentElement.parentElement.parentElement.parentElement.remove()
+            this.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
           })
 
-          image_cover.append(close_btn)
+          image_cover.append(close_div)
           bg_image.append(image_cover)
 
           let top_info = document.createElement("div")
