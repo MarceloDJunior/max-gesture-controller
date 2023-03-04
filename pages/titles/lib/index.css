@@ -1186,3 +1186,9 @@ a {
         padding: 0px 10px;
     }
 }
+
+#hands {
+    pointer-events: none;
+    position: fixed;
+    z-index: 2;
+}
