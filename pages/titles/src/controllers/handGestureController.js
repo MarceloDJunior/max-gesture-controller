@@ -1,7 +1,4 @@
 import { prepareRunChecker } from "../../../../lib/shared/util.js"
-
-const { shouldRun: scrollShouldRun } = prepareRunChecker({ timerDelay: 50 })
-
 export default class HandGestureController {
   #view
   #service
@@ -22,7 +19,7 @@ export default class HandGestureController {
   }
 
   #scrollPage(direction) {
-    const pixelsPerScroll = 50
+    const pixelsPerScroll = 100
     if (this.#lastDirection.direction === direction) {
       this.#lastDirection.y =
         direction === 'scroll-down' ?
@@ -40,7 +37,6 @@ export default class HandGestureController {
       const hands = await this.#service.estimateHands(this.#camera.video)
       for await (const { event, x, y } of this.#service.detectGestures(hands)) {
         if (event.includes('scroll')) {
-          if (!scrollShouldRun()) continue
           this.#scrollPage(event)
         }
       }
