@@ -18,7 +18,7 @@ const factory = {
     return HandGestureController.initialize({
       camera,
       view: new HandGestureView({
-        timerDelay: 50,
+        timerDelay: 10,
         fingerLoopUpIndexes,
         styler
       }),

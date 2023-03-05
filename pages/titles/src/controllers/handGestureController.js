@@ -1,6 +1,6 @@
 import { prepareRunChecker } from "../../../../lib/shared/util.js"
 
-const { shouldRun: clickShouldRun } = prepareRunChecker({ timerDelay: 300 })
+const { shouldRun: clickShouldRun } = prepareRunChecker({ timerDelay: 200 })
 export default class HandGestureController {
   #view
   #service
@@ -20,11 +20,21 @@ export default class HandGestureController {
     return this.#loop()
   }
 
-  #scrollPage(direction) {
+  #scrollPage(y) {
     const pixelsPerScroll = 100
+    const screenHeight = window.innerHeight
+    const middle = screenHeight / 2
+    let direction
+    if (y > middle) {
+      direction = 'down'
+    }
+    if (y < middle) {
+      direction = 'up'
+    }
+    if (!direction) return
     if (this.#lastDirection.direction === direction) {
       this.#lastDirection.y =
-        direction === 'scroll-down' ?
+        direction === 'down' ?
           this.#lastDirection.y + pixelsPerScroll :
           this.#lastDirection.y - pixelsPerScroll
     } else {
@@ -42,13 +52,14 @@ export default class HandGestureController {
         this.#view.drawResults(hands)
       }
       for await (const { event, x, y } of this.#service.detectGestures(hands)) {
+        console.log(event, x, y)
         if (event === 'click') {
-          if(!clickShouldRun()) continue
+          if (!clickShouldRun()) continue
           this.#view.clickOnElement(x, y)
           continue
         }
-        if (event.includes('scroll')) {
-          this.#scrollPage(event)
+        if (event === 'scroll') {
+          this.#scrollPage(y)
         }
       }
     } catch (error) {
