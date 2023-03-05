@@ -628,19 +628,19 @@ a {
     background-color: #616161;
 }
 
-/* .card:hover .overlay, .card.active .overlay{
+.card:hover .overlay, .card.active .overlay{
+    display: flex;
+    background-image: linear-gradient(to right,
+            rgba(51, 51, 51, 0.95),
+            rgba(255, 255, 255, 0.01));
+}
+
+/* .card .overlay {
     display: flex;
     background-image: linear-gradient(to right,
             rgba(51, 51, 51, 0.95),
             rgba(255, 255, 255, 0.01));
 } */
-
-.card .overlay {
-    display: flex;
-    background-image: linear-gradient(to right,
-            rgba(51, 51, 51, 0.95),
-            rgba(255, 255, 255, 0.01));
-} 
 
 .overlay p {
     color: #bdbdbd;
