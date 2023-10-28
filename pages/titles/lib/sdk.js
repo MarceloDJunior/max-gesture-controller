@@ -50,7 +50,6 @@ const CheckSizeAttributes = (carousels = DEFAULT_CAROUSELS) => {
 
   // let carousels = document.getElementsByClassName("card-carousel")
 
-  let old_num_cards = num_cards_GLOBAL
   let new_num_cards
 
   if (width > 1501) {
@@ -266,7 +265,7 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
 </svg>`
           const close_btn = close_div.querySelector("svg")
 
-          close_btn.addEventListener("click", function (event) {
+          close_btn.addEventListener("click", function () {
             this.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
           })
 
@@ -657,8 +656,6 @@ const MakeJumbotron = () => {
 
   document.getElementsByClassName("top")[0].style.height = `${height}px`
 }
-
-let slide_index = 0
 
 const SmoothScroll = (id) => {
   let element = document.getElementById(id)
