@@ -46,6 +46,7 @@ export default class Controller {
   }
 
   loop() {
+    if (!this.#camera) return
     const video = this.#camera.video
     const img = this.#view.getVideoFrame(video)
     this.#worker.send(img)
