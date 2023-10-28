@@ -8,8 +8,13 @@ import HandGestureController from "./../controllers/handGestureController.js"
 import HandGestureView from "./../views/handGestureView.js"
 import HandGestureService from "./../services/handGestureService.js"
 import Camera from "../../../../lib/shared/camera.js"
-import { knownGestures, gestureStrings, fingerLoopUpIndexes } from "../util/util.js"
+import {
+  knownGestures,
+  gestureStrings,
+  fingerLoopUpIndexes,
+} from "../util/util.js"
 
+// eslint-disable-next-line no-undef
 const styler = new PseudoStyler()
 const camera = await Camera.init()
 
@@ -20,17 +25,17 @@ const factory = {
       view: new HandGestureView({
         timerDelay: 10,
         fingerLoopUpIndexes,
-        styler
+        styler,
       }),
       service: new HandGestureService({
         fingerpose: window.fp,
         handPoseDetection: window.handPoseDetection,
         handsVersion: window.VERSION,
         knownGestures,
-        gestureStrings
-      })
+        gestureStrings,
+      }),
     })
-  }
+  },
 }
 
 export default factory

@@ -1,8 +1,7 @@
-const { GestureDescription, Finger, FingerCurl } = window.fp;
+const { GestureDescription, Finger, FingerCurl } = window.fp
 
-const ScrollGesture = new GestureDescription('scroll'); // 🤞
-const ClickGesture = new GestureDescription('click'); // 👈
-
+const ScrollGesture = new GestureDescription("scroll") // 🤞
+const ClickGesture = new GestureDescription("click") // 👈
 
 // Scroll
 // -----------------------------------------------------------------------------
@@ -22,8 +21,6 @@ ScrollGesture.addCurl(Finger.Ring, FingerCurl.FullCurl, 1.0)
 
 ScrollGesture.addCurl(Finger.Pinky, FingerCurl.FullCurl, 1.0)
 
-
-
 // Click
 // -----------------------------------------------------------------------------
 ClickGesture.addCurl(Finger.Index, FingerCurl.HalfCurl, 0.8)
@@ -40,17 +37,11 @@ ClickGesture.addCurl(Finger.Ring, FingerCurl.FullCurl, 0.9)
 ClickGesture.addCurl(Finger.Pinky, FingerCurl.HalfCurl, 1.0)
 ClickGesture.addCurl(Finger.Pinky, FingerCurl.FullCurl, 0.9)
 
-
-const knownGestures = [
-  ScrollGesture,
-  ClickGesture
-]
+const knownGestures = [ScrollGesture, ClickGesture]
 
 const gestureStrings = {
-  scroll: '🤞',
-  click: '👈'
+  scroll: "🤞",
+  click: "👈",
 }
 
-export {
-  knownGestures, gestureStrings
-}
+export { knownGestures, gestureStrings }

@@ -8,16 +8,15 @@ let cards = [
     display_background:
       "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fhdqwalls.com%2Fdownload%2Finterstellar-gargantua-u4-1920x1080.jpg&f=1&nofb=1",
     title: "Interstellar",
-    description:
-      "Watch this incredible film made by some incredible people!"
+    description: "Watch this incredible film made by some incredible people!",
   },
   {
-    background: "https://images.unsplash.com/photo-1482164565953-04b62dcac1cd?ixlib=rb-4.0.3&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb",
+    background:
+      "https://images.unsplash.com/photo-1482164565953-04b62dcac1cd?ixlib=rb-4.0.3&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb",
     display_background:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages2.alphacoders.com%2F845%2F84502.jpg&f=1&nofb=1",
     title: "Inception",
-    description:
-      "Watch this incredible film made by some incredible people!"
+    description: "Watch this incredible film made by some incredible people!",
   },
   {
     background:
@@ -25,8 +24,7 @@ let cards = [
     display_background:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages7.alphacoders.com%2F990%2F990610.jpg&f=1&nofb=1",
     title: "Avengers: Endgame",
-    description:
-      "Watch this incredible film made by some incredible people!"
+    description: "Watch this incredible film made by some incredible people!",
   },
   {
     background:
@@ -34,44 +32,38 @@ let cards = [
     display_background:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fjoker-stair-dance_68124_1920x1080.jpg&f=1&nofb=1",
     title: "Joker",
-    description:
-      "Watch this incredible film made by some incredible people!"
+    description: "Watch this incredible film made by some incredible people!",
   },
   {
     background:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.U2iFUz9mivZeH-h48O5wtwHaEK%26pid%3DApi&f=1",
     title: "1917",
-    description:
-      "Watch this incredible film made by some incredible people!"
+    description: "Watch this incredible film made by some incredible people!",
   },
   {
     background:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapershome.com%2Fimages%2Fpages%2Fpic_h%2F22685.jpg&f=1&nofb=1",
     title: "TENET",
-    description:
-      "Watch this incredible film made by some incredible people!"
+    description: "Watch this incredible film made by some incredible people!",
   },
   {
     background:
       "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2F9%2F6%2F8%2F126147.jpg&f=1&nofb=1",
     title: "Star Wars: A New Hope",
-    description:
-      "Watch this incredible film made by some incredible people!"
+    description: "Watch this incredible film made by some incredible people!",
   },
   {
     background:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FrPpxrz8o0svAPCLucjsEdMXoDfX.jpg&f=1&nofb=1",
     title: "Venom",
-    description:
-      "Watch this incredible film made by some incredible people!"
+    description: "Watch this incredible film made by some incredible people!",
   },
   {
     background:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F2%2F6%2F8%2F123320-lord-of-the-rings-background-1920x1080-picture.jpg&f=1&nofb=1",
     title: "Lord of the Rings",
-    description:
-      "Watch this incredible film made by some incredible people!"
-  }
+    description: "Watch this incredible film made by some incredible people!",
+  },
 ]
 
 let cast = [
@@ -79,20 +71,20 @@ let cast = [
     picture:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.scdn.co%2Fimage%2F338040ea81df8012c152cfa65a4c1b440a94a1bc&f=1&nofb=1",
     square: 1000,
-    name: "Will Smith"
+    name: "Will Smith",
   },
   {
     picture:
       "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsiskiyou.sou.edu%2Fwp-content%2Fuploads%2F2014%2F10%2FRobin.jpg&f=1&nofb=1",
     square: 2000,
-    name: "Robin Williams"
+    name: "Robin Williams",
   },
   {
     picture:
       "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.byrdie.com%2Fthmb%2FaSjYcUqubm-ucpugLMuN8m-nvdU%3D%2F796x700%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fcdn.cliqueinc.com__cache__posts__237400__jennifer-lawrence-hairstyles-237400-1506716140954-main.700x0c-af3f438528ea44f0aa9c3c1fe3ef8c64.jpg&f=1&nofb=1",
     square: 700,
-    name: "Jennifer Lawrence"
-  }
+    name: "Jennifer Lawrence",
+  },
 ]
 
 const IsMobile = () => {
@@ -205,8 +197,7 @@ const ResizeHeader = () => {
 }
 
 const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
-  let carousel_width = carousels[0]
-    .clientWidth
+  let carousel_width = carousels[0].clientWidth
 
   let btn_width =
     document.getElementsByClassName("carousel-btn")[0].clientWidth +
@@ -272,7 +263,9 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
 </svg>`
       button1.classList.add("watch")
 
-      button1.addEventListener('click', function () { PlayVideo("00") })
+      button1.addEventListener("click", function () {
+        PlayVideo("00")
+      })
 
       let button2 = document.createElement("div")
       button2.innerHTML = `<svg fill="currentColor" viewBox="0 0 16 16">
@@ -329,7 +322,7 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
           close_div.innerHTML = `<svg fill="currentColor" viewBox="0 0 16 16">
   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 </svg>`
-          const close_btn = close_div.querySelector('svg')
+          const close_btn = close_div.querySelector("svg")
 
           close_btn.addEventListener("click", function (event) {
             this.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
@@ -375,12 +368,7 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
 
           bottom_info.append(cast_slider)
 
-          modal_content.append(
-            bg_image,
-            top_info,
-            mid_info,
-            bottom_info
-          )
+          modal_content.append(bg_image, top_info, mid_info, bottom_info)
           modal.append(modal_content)
 
           document.body.append(modal)
@@ -392,13 +380,12 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
           })
 
           // Set the height for the modal image
-          let total_width = document.getElementsByClassName(
-            "modal-content"
-          )[0].clientWidth
+          let total_width =
+            document.getElementsByClassName("modal-content")[0].clientWidth
           let large_scale = (100 * total_width) / 1920
-          document.getElementsByClassName(
-            "desc-image"
-          )[0].style.height = `${1080 * (large_scale / 100)}px`
+          document.getElementsByClassName("desc-image")[0].style.height = `${
+            1080 * (large_scale / 100)
+          }px`
 
           // Set image for cast
           for (let c = 0; c < cast.length; c++) {
@@ -406,9 +393,10 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
             cast_block.classList.add("cast-card")
             cast_block.style.backgroundImage = `url("${cast[c].picture}")`
             cast_block.style.width = 100 / cast.length - 5 + "%"
-            cast_block.style.height = `calc(${document.getElementsByClassName("cast")[0]
-              .clientWidth / cast.length
-              }"px" - 5%)`
+            cast_block.style.height = `calc(${
+              document.getElementsByClassName("cast")[0].clientWidth /
+              cast.length
+            }"px" - 5%)`
             cast_slider.append(cast_block)
           }
         }
@@ -421,13 +409,13 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
       if (j < num_cards) {
         carousels[i].insertBefore(
           card,
-          carousels[i].children[carousels[i].children.length - 1]
+          carousels[i].children[carousels[i].children.length - 1],
         )
       } else {
         card.style.display = "none"
         carousels[i].insertBefore(
           card,
-          carousels[i].children[carousels[i].children.length - 1]
+          carousels[i].children[carousels[i].children.length - 1],
         )
       }
     }
@@ -437,12 +425,12 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
 const AddBrowseSearchCards = ({ cards, itemsPerLine }) => {
   const cardsCopy = [...cards]
   const carouselsAmount = cardsCopy.length / itemsPerLine
-  const browseSearchDiv = document.getElementById('browseSearch')
+  const browseSearchDiv = document.getElementById("browseSearch")
 
   const carousels = []
   for (let i = 0; i < carouselsAmount; i++) {
-    const carousel = document.createElement('div')
-    carousel.classList.add('my-carousel', 'card-carousel')
+    const carousel = document.createElement("div")
+    carousel.classList.add("my-carousel", "card-carousel")
     browseSearchDiv.append(carousel)
     carousels.push(carousel)
   }
@@ -496,7 +484,9 @@ const AddBrowseSearchCards = ({ cards, itemsPerLine }) => {
   <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
 </svg>`
       button1.classList.add("watch")
-      button1.addEventListener('click', function () { PlayVideo(chosen_card.show_id) })
+      button1.addEventListener("click", function () {
+        PlayVideo(chosen_card.show_id)
+      })
 
       let button2 = document.createElement("div")
       button2.innerHTML = `<svg fill="currentColor" viewBox="0 0 16 16">
@@ -554,7 +544,7 @@ const AddBrowseSearchCards = ({ cards, itemsPerLine }) => {
   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 </svg>`
 
-          const close_btn = close_div.querySelector('svg')
+          const close_btn = close_div.querySelector("svg")
 
           close_btn.addEventListener("click", function () {
             this.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
@@ -600,12 +590,7 @@ const AddBrowseSearchCards = ({ cards, itemsPerLine }) => {
 
           bottom_info.append(cast_slider)
 
-          modal_content.append(
-            bg_image,
-            top_info,
-            mid_info,
-            bottom_info
-          )
+          modal_content.append(bg_image, top_info, mid_info, bottom_info)
           modal.append(modal_content)
 
           document.body.append(modal)
@@ -617,13 +602,12 @@ const AddBrowseSearchCards = ({ cards, itemsPerLine }) => {
           })
 
           // Set the height for the modal image
-          let total_width = document.getElementsByClassName(
-            "modal-content"
-          )[0].clientWidth
+          let total_width =
+            document.getElementsByClassName("modal-content")[0].clientWidth
           let large_scale = (100 * total_width) / 1920
-          document.getElementsByClassName(
-            "desc-image"
-          )[0].style.height = `${1080 * (large_scale / 100)}px`
+          document.getElementsByClassName("desc-image")[0].style.height = `${
+            1080 * (large_scale / 100)
+          }px`
 
           // Set image for cast
           for (let c = 0; c < cast.length; c++) {
@@ -631,9 +615,10 @@ const AddBrowseSearchCards = ({ cards, itemsPerLine }) => {
             cast_block.classList.add("cast-card")
             cast_block.style.backgroundImage = `url("${cast[c].picture}")`
             cast_block.style.width = 100 / cast.length - 5 + "%"
-            cast_block.style.height = `calc(${document.getElementsByClassName("cast")[0]
-              .clientWidth / cast.length
-              }"px" - 5%)`
+            cast_block.style.height = `calc(${
+              document.getElementsByClassName("cast")[0].clientWidth /
+              cast.length
+            }"px" - 5%)`
             cast_slider.append(cast_block)
           }
         }
@@ -646,21 +631,25 @@ const AddBrowseSearchCards = ({ cards, itemsPerLine }) => {
 
       carousels[i].insertBefore(
         card,
-        carousels[i].children[carousels[i].children.length - 1]
+        carousels[i].children[carousels[i].children.length - 1],
       )
     }
   }
 }
 
-const CheckCards = (carousels = DEFAULT_CAROUSELS, num_cards = num_cards_GLOBAL) => {
+const CheckCards = (
+  carousels = DEFAULT_CAROUSELS,
+  num_cards = num_cards_GLOBAL,
+) => {
   // let carousels = document.getElementsByClassName("card-carousel")
 
   for (let i = 0; i < carousels.length; i++) {
     let carousel_width = carousels[i].clientWidth
 
     let btn_width =
-      (carousels[i].getElementsByClassName("carousel-btn")?.[0]?.clientWidth +
-        carousels[i].getElementsByClassName("carousel-btn")?.[1]?.clientWidth) ?? 10
+      carousels[i].getElementsByClassName("carousel-btn")?.[0]?.clientWidth +
+        carousels[i].getElementsByClassName("carousel-btn")?.[1]?.clientWidth ??
+      10
 
     // let num_cards = num_cards_GLOBAL
     let card_margin = 2
@@ -668,8 +657,7 @@ const CheckCards = (carousels = DEFAULT_CAROUSELS, num_cards = num_cards_GLOBAL)
     let initial_height = 1080
 
     let scale =
-      (100 *
-        ((carousel_width - btn_width) / num_cards - card_margin * 2)) /
+      (100 * ((carousel_width - btn_width) / num_cards - card_margin * 2)) /
       initial_width
 
     let cards = carousels[i].getElementsByClassName("card")
@@ -751,7 +739,7 @@ const Next = (elem) => {
   first_elem.remove()
   carousel.insertBefore(
     first_elem,
-    carousel.children[carousel.children.length - 1]
+    carousel.children[carousel.children.length - 1],
   )
 
   next_elem.style.display = "flex"
@@ -793,7 +781,7 @@ const ToggleWatchLater = (movie = "", activate = true) => {
 }
 
 const PlayVideo = (movieTitle) => {
-  const [rootPath] = window.location.href.split('/pages/')
+  const [rootPath] = window.location.href.split("/pages/")
   window.location.href = `${rootPath}/pages/video-player?title=${movieTitle}`
 }
 
@@ -804,11 +792,11 @@ const Initialize = () => {
   MakeJumbotron()
   CheckCards()
   ResizeHeader()
-  const body = document.getElementById('body')
+  const body = document.getElementById("body")
   body.onscroll = () => ScrollFunction()
 }
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   Initialize()
 })
 

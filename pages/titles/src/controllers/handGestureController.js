@@ -6,14 +6,14 @@ export default class HandGestureController {
   #service
   #camera
   #lastDirection = {
-    direction: '',
-    y: 0
+    direction: "",
+    y: 0,
   }
 
   constructor({ view, service, camera }) {
-    this.#view = view;
-    this.#service = service;
-    this.#camera = camera;
+    this.#view = view
+    this.#service = service
+    this.#camera = camera
   }
 
   async init() {
@@ -26,17 +26,17 @@ export default class HandGestureController {
     const middle = screenHeight / 2
     let direction
     if (y > middle) {
-      direction = 'down'
+      direction = "down"
     }
     if (y < middle) {
-      direction = 'up'
+      direction = "up"
     }
     if (!direction) return
     if (this.#lastDirection.direction === direction) {
       this.#lastDirection.y =
-        direction === 'down' ?
-          this.#lastDirection.y + pixelsPerScroll :
-          this.#lastDirection.y - pixelsPerScroll
+        direction === "down"
+          ? this.#lastDirection.y + pixelsPerScroll
+          : this.#lastDirection.y - pixelsPerScroll
     } else {
       this.#lastDirection.direction = direction
     }
@@ -53,17 +53,17 @@ export default class HandGestureController {
       }
       for await (const { event, x, y } of this.#service.detectGestures(hands)) {
         console.log(event, x, y)
-        if (event === 'click') {
+        if (event === "click") {
           if (!clickShouldRun()) continue
           this.#view.clickOnElement(x, y)
           continue
         }
-        if (event === 'scroll') {
+        if (event === "scroll") {
           this.#scrollPage(y)
         }
       }
     } catch (error) {
-      console.error('erro', error)
+      console.error("erro", error)
     }
   }
 

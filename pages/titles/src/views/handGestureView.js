@@ -1,8 +1,8 @@
 export default class HandGestureView {
   #scrollTimer
   #canScroll = true
-  #handsCanvas = document.querySelector('#hands')
-  #canvasContext = this.#handsCanvas.getContext('2d')
+  #handsCanvas = document.querySelector("#hands")
+  #canvasContext = this.#handsCanvas.getContext("2d")
   #fingerLoopUpIndexes
   #styler
 
@@ -18,7 +18,12 @@ export default class HandGestureView {
   }
 
   clearCanvas() {
-    this.#canvasContext.clearRect(0, 0, this.#handsCanvas.width, this.#handsCanvas.height)
+    this.#canvasContext.clearRect(
+      0,
+      0,
+      this.#handsCanvas.width,
+      this.#handsCanvas.height,
+    )
   }
 
   drawResults(hands) {
@@ -40,12 +45,12 @@ export default class HandGestureView {
     if (!element) return
 
     const rect = element.getBoundingClientRect()
-    const event = new MouseEvent('click', {
+    const event = new MouseEvent("click", {
       view: window,
       bubbles: true,
       cancelable: true,
       clientX: rect.left + x,
-      clientY: rect.top + y
+      clientY: rect.top + y,
     })
 
     element.dispatchEvent(event)
@@ -69,7 +74,7 @@ export default class HandGestureView {
     const fingers = Object.keys(this.#fingerLoopUpIndexes)
     for (const finger of fingers) {
       const points = this.#fingerLoopUpIndexes[finger].map(
-        index => keypoints[index]
+        (index) => keypoints[index],
       )
       const region = new Path2D()
       // All point start from [0] and [0] is the palm
@@ -84,22 +89,22 @@ export default class HandGestureView {
   }
 
   #hoverElement(finger, points) {
-    if (finger !== 'indexFinger') return
-    const tip = points.find(item => item.name === "index_finger_tip")
+    if (finger !== "indexFinger") return
+    const tip = points.find((item) => item.name === "index_finger_tip")
     const element = document.elementFromPoint(tip.x, tip.y)
-    if(!element) return
-    const fn = () => this.#styler.toggleStyle(element, ':hover')
+    if (!element) return
+    const fn = () => this.#styler.toggleStyle(element, ":hover")
     fn()
     setTimeout(fn, 500)
   }
 
   #setScrollThrottle(timerDelay) {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       this.#canScroll = false
-      clearTimeout(this.#scrollTimer);
+      clearTimeout(this.#scrollTimer)
       this.#scrollTimer = setTimeout(() => {
         this.#canScroll = true
-      }, timerDelay);
+      }, timerDelay)
     })
   }
 
@@ -111,7 +116,7 @@ export default class HandGestureView {
     if (this.#canScroll) {
       window.scroll({
         top,
-        behavior: 'smooth',
+        behavior: "smooth",
       })
     }
   }
