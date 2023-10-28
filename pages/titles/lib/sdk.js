@@ -1,70 +1,12 @@
 let num_cards_GLOBAL = 5
 const DEFAULT_CAROUSELS = document.getElementsByClassName("default-carousel")
 
-let cards = [
-  {
-    background:
-      "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoviefail.com%2Fwp-content%2Fuploads%2F2014%2F11%2Finterstellar1.jpeg&f=1&nofb=1",
-    display_background:
-      "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fhdqwalls.com%2Fdownload%2Finterstellar-gargantua-u4-1920x1080.jpg&f=1&nofb=1",
-    title: "Interstellar",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-  {
-    background:
-      "https://images.unsplash.com/photo-1482164565953-04b62dcac1cd?ixlib=rb-4.0.3&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb",
-    display_background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages2.alphacoders.com%2F845%2F84502.jpg&f=1&nofb=1",
-    title: "Inception",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-  {
-    background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wallpapersafari.com%2F41%2F1%2Fhj197K.jpg&f=1&nofb=1",
-    display_background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages7.alphacoders.com%2F990%2F990610.jpg&f=1&nofb=1",
-    title: "Avengers: Endgame",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-  {
-    background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fjoker-2019-movie_66632_1920x1080.jpg&f=1&nofb=1",
-    display_background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fjoker-stair-dance_68124_1920x1080.jpg&f=1&nofb=1",
-    title: "Joker",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-  {
-    background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.U2iFUz9mivZeH-h48O5wtwHaEK%26pid%3DApi&f=1",
-    title: "1917",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-  {
-    background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapershome.com%2Fimages%2Fpages%2Fpic_h%2F22685.jpg&f=1&nofb=1",
-    title: "TENET",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-  {
-    background:
-      "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2F9%2F6%2F8%2F126147.jpg&f=1&nofb=1",
-    title: "Star Wars: A New Hope",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-  {
-    background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FrPpxrz8o0svAPCLucjsEdMXoDfX.jpg&f=1&nofb=1",
-    title: "Venom",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-  {
-    background:
-      "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F2%2F6%2F8%2F123320-lord-of-the-rings-background-1920x1080-picture.jpg&f=1&nofb=1",
-    title: "Lord of the Rings",
-    description: "Watch this incredible film made by some incredible people!",
-  },
-]
+let cards = []
+
+const loadMovies = async () => {
+  const response = await fetch("../../../assets/database.json")
+  cards = await response.json()
+}
 
 let cast = [
   {
@@ -235,7 +177,7 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
 
       let card = document.createElement("div")
       card.classList.add("card")
-      card.style.backgroundImage = `url(${chosen_card.background})`
+      card.style.backgroundImage = `url(${chosen_card.imageUrl})`
 
       //If image doesn't load
       card.style.backgroundColor = `#333`
@@ -252,7 +194,7 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
       let title = document.createElement("h4")
       title.innerText = chosen_card.title
       let description = document.createElement("p")
-      description.innerText = "1h 22min"
+      description.innerText = chosen_card.duration
 
       let button_container = document.createElement("div")
       button_container.classList.add("button-container")
@@ -314,7 +256,7 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
 
           let bg_image = document.createElement("div")
           bg_image.classList.add("desc-image")
-          bg_image.style.backgroundImage = `url(${chosen_card.background})`
+          bg_image.style.backgroundImage = `url(${chosen_card.imageUrl})`
           let image_cover = document.createElement("div")
 
           let close_div = document.createElement("div")
@@ -785,7 +727,9 @@ const PlayVideo = (movieTitle) => {
   window.location.href = `${rootPath}/pages/video-player?title=${movieTitle}`
 }
 
-const Initialize = () => {
+const Initialize = async () => {
+  await loadMovies()
+  console.log(cards)
   AddCarouselButtons()
   CheckSizeAttributes()
   AddDefaultCards()

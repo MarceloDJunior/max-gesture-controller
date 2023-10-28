@@ -46,6 +46,7 @@ export default class HandGestureController {
 
   async #estimateHands() {
     try {
+      if (!this.#camera) return
       const hands = await this.#service.estimateHands(this.#camera.video)
       this.#view.clearCanvas()
       if (hands?.length) {
