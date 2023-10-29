@@ -165,10 +165,13 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
 
     for (let c = 0; c < cards.length; c++) {
       not_chosen.push(c)
+      if(i === 1) {
+        not_chosen.reverse()
+      }
     }
 
     for (let j = 0; j < cards.length; j++) {
-      let chosen_index = Math.floor(Math.random() * not_chosen.length)
+      let chosen_index = 0
 
       let chosen_card = cards[not_chosen[chosen_index]]
 
@@ -724,9 +727,15 @@ const PlayVideo = (movieTitle) => {
   window.location.href = `${rootPath}/pages/video-player?id=${movieTitle}`
 }
 
+const ClearCarousels = () => {
+  const divElements = document.getElementsByClassName("card-carousel")
+  for (let i = 0; i < divElements.length; i++) {
+    divElements[i].innerHTML = ""
+  }
+}
+
 const Initialize = async () => {
   await loadMovies()
-  console.log(cards)
   AddCarouselButtons()
   CheckSizeAttributes()
   AddDefaultCards()
@@ -737,8 +746,21 @@ const Initialize = async () => {
   body.onscroll = () => ScrollFunction()
 }
 
+const Resize = () => {
+  ClearCarousels()
+  AddCarouselButtons()
+  CheckSizeAttributes()
+  AddDefaultCards()
+  CheckCards()
+  ResizeHeader()
+}
+
 window.addEventListener("load", () => {
   Initialize()
+})
+
+window.addEventListener("resize", () => {
+  Resize()
 })
 
 window.IsMobile = IsMobile
