@@ -205,7 +205,7 @@ const AddDefaultCards = (carousels = DEFAULT_CAROUSELS) => {
       button1.classList.add("watch")
 
       button1.addEventListener("click", function () {
-        PlayVideo("00")
+        PlayVideo(chosen_card.show_id)
       })
 
       let button2 = document.createElement("div")
@@ -721,7 +721,7 @@ const ToggleWatchLater = (movie = "", activate = true) => {
 
 const PlayVideo = (movieTitle) => {
   const [rootPath] = window.location.href.split("/pages/")
-  window.location.href = `${rootPath}/pages/video-player?title=${movieTitle}`
+  window.location.href = `${rootPath}/pages/video-player?id=${movieTitle}`
 }
 
 const Initialize = async () => {
