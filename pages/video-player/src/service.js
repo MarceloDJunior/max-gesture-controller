@@ -7,9 +7,18 @@ const EAR_THRESHOLD = 0.27
 export default class Service {
   #model = null
   #faceLandmarksDetection
+  #dbUrl = ""
 
-  constructor({ faceLandmarksDetection }) {
+  constructor({ faceLandmarksDetection, dbUrl }) {
     this.#faceLandmarksDetection = faceLandmarksDetection
+    this.#dbUrl = dbUrl
+  }
+
+  async getMovieById(id) {
+    const response = await fetch(this.#dbUrl)
+    const database = await response.json()
+    const movie = database.find((t) => t.show_id === id)
+    return movie
   }
 
   async loadModel() {

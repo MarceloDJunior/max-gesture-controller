@@ -2,13 +2,15 @@ export default class Controller {
   #view
   #worker
   #camera
+  #service
   #blinkCounter = 0
+  #movie
 
-  constructor({ view, worker, camera }) {
+  constructor({ view, worker, camera, service }) {
     this.#view = view
     this.#camera = camera
+    this.#service = service
     this.#worker = this.#configureWorker(worker)
-
     this.#view.configureOnBtnClick(this.onBtnStart.bind(this))
   }
 
@@ -43,6 +45,15 @@ export default class Controller {
 
   async init() {
     console.log("Init!!")
+
+    const searchParams = new URLSearchParams(window.location.search)
+    const title = searchParams.get("id")
+
+    this.#movie = await this.#service.getMovieById(title)
+
+    const youtubeVideoId = this.#movie.trailerUrl.split("/").pop()
+
+    window.loadYTPlayer(youtubeVideoId)
   }
 
   loop() {

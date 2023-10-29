@@ -13,7 +13,7 @@
     "description": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival.",
     "type": "Movie",
     "imageUrl": "https://images.unsplash.com/photo-1482164565953-04b62dcac1cd?ixlib=rb-4.0.3&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb",
-    "trailerUrl": "https://www.youtube.com/watch?v=zSWdZVtXT7E"
+    "trailerUrl": "https://www.youtube.com/embed/zSWdZVtXT7E"
   },
   {
     "show_id": "60010514",
@@ -29,7 +29,7 @@
     "description": "In this mind-bending sci-fi thriller, a man with the ability to enter people's dreams is tasked with planting an idea in someone's mind.",
     "type": "Movie",
     "imageUrl": "https://images.unsplash.com/photo-1482164565953-04b62dcac1cd?ixlib=rb-4.0.3&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb",
-    "trailerUrl": "https://www.youtube.com/watch?v=YoHD9XEInc0"
+    "trailerUrl": "https://www.youtube.com/embed/YoHD9XEInc0"
   },
   {
     "show_id": "60011697",
@@ -45,7 +45,7 @@
     "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
     "type": "Movie",
     "imageUrl": "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wallpapersafari.com%2F41%2F1%2Fhj197K.jpg&f=1&nofb=1",
-    "trailerUrl": "https://www.youtube.com/watch?v=TcMBFSGVi1c"
+    "trailerUrl": "https://www.youtube.com/embed/TcMBFSGVi1c"
   },
   {
     "show_id": "80235679",
@@ -61,7 +61,7 @@
     "description": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime.",
     "type": "Movie",
     "imageUrl": "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fjoker-2019-movie_66632_1920x1080.jpg&f=1&nofb=1",
-    "trailerUrl": "https://www.youtube.com/watch?v=t433PEQGErc"
+    "trailerUrl": "https://www.youtube.com/embed/t433PEQGErc"
   },
   {
     "show_id": "80236319",
@@ -77,7 +77,7 @@
     "description": "During World War I, two British soldiers are tasked with delivering a life-saving message across enemy lines to prevent a deadly ambush.",
     "type": "Movie",
     "imageUrl": "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.U2iFUz9mivZeH-h48O5wtwHaEK%26pid%3DApi&f=1",
-    "trailerUrl": "https://www.youtube.com/watch?v=_3gy6K7LXHg"
+    "trailerUrl": "https://www.youtube.com/embed/_3gy6K7LXHg"
   },
   {
     "show_id": "81239470",
@@ -93,7 +93,7 @@
     "description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real-time.",
     "type": "Movie",
     "imageUrl": "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapershome.com%2Fimages%2Fpages%2Fpic_h%2F22685.jpg&f=1&nofb=1",
-    "trailerUrl": "https://www.youtube.com/watch?v=uXm6T1rAe28"
+    "trailerUrl": "https://www.youtube.com/embed/uXm6T1rAe28"
   },
   {
     "show_id": "60010732",
@@ -109,7 +109,7 @@
     "description": "Obi-Wan Kenobi guides intrepid Luke Skywalker on a valiant bid to save Princess Leia from Darth Vader in a classic battle between good and evil.",
     "type": "Movie",
     "imageUrl": "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2F9%2F6%2F8%2F126147.jpg&f=1&nofb=1",
-    "trailerUrl": "https://www.youtube.com/watch?v=vZ734NWnAHA"
+    "trailerUrl": "https://www.youtube.com/embed/vZ734NWnAHA"
   },
   {
     "show_id": "81060049",
@@ -125,7 +125,7 @@
     "description": "A failed reporter is bonded to an alien entity, one of many symbiotes who have invaded Earth. But the being takes a liking to Earth and decides to protect it.",
     "type": "Movie",
     "imageUrl": "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fvenom-movie_66164_1920x1080.jpg&f=1&nofb=1",
-    "trailerUrl": "https://www.youtube.com/watch?v=u9Mv98Gr5pY"
+    "trailerUrl": "https://www.youtube.com/embed/u9Mv98Gr5pY"
   },
   {
     "show_id": "80168222",
@@ -141,7 +141,7 @@
     "description": "In this thrilling sequel, Batman teams up with Commissioner Gordon and the new District Attorney to take on a psychotic mastermind known as the Joker.",
     "type": "Movie",
     "imageUrl": "https://images.alphacoders.com/440/44041.jpg",
-    "trailerUrl": "https://www.youtube.com/watch?v=EXeTwQWrcwY"
+    "trailerUrl": "https://www.youtube.com/embed/EXeTwQWrcwY"
   },
   {
     "show_id": "60011815",
@@ -157,6 +157,6 @@
     "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against the controllers of it.",
     "type": "Movie",
     "imageUrl": "https://s2.glbimg.com/kH0D1eqK32a1thZ0ctmO4S64I6U=/e.glbimg.com/og/ed/f/original/2019/05/20/matrix_1999.jpg",
-    "trailerUrl": "https://www.youtube.com/watch?v=vKQi3bBA1y8"
+    "trailerUrl": "https://www.youtube.com/embed/vKQi3bBA1y8"
   }
 ]

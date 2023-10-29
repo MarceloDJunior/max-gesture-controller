@@ -5,7 +5,6 @@ export default class View {
   #canvasContext = this.#videoFrameCanvas.getContext("2d", {
     willReadFrequently: true,
   })
-  #videoElement = document.querySelector("#video")
 
   getVideoFrame(video) {
     const canvas = this.#videoFrameCanvas
@@ -18,11 +17,24 @@ export default class View {
   }
 
   togglePlayVideo() {
-    if (this.#videoElement.paused) {
-      this.#videoElement.play()
+    if (this.isVideoPaused()) {
+      this.playVideo()
       return
     }
-    this.#videoElement.pause()
+    this.pauseVideo()
+  }
+
+  isVideoPaused() {
+    const pausedValue = 2
+    return window.YTPlayer.getPlayerState() === pausedValue
+  }
+
+  playVideo() {
+    window.YTPlayer.playVideo()
+  }
+
+  pauseVideo() {
+    window.YTPlayer.pauseVideo()
   }
 
   enableButton() {
@@ -35,9 +47,5 @@ export default class View {
 
   log(text) {
     this.#statusElement.innerHTML = text
-  }
-
-  setVideoSrc(url) {
-    this.#videoElement.src = url
   }
 }

@@ -4,6 +4,14 @@ import Controller from "./controller.js"
 import Service from "./service.js"
 import View from "./view.js"
 
+const [rootPath] = window.location.href.split("/pages/")
+const dbUrl = `${rootPath}/assets/database.json`
+
+const service = new Service({
+  faceLandmarksDetection: window.faceLandmarksDetection,
+  dbUrl,
+})
+
 async function getWorker() {
   if (supportsWorkerType()) {
     console.log("initialize esm workers")
@@ -51,19 +59,16 @@ async function getWorker() {
   return workerMock
 }
 
-const [rootPath] = window.location.href.split("/pages/")
-const view = new View()
-view.setVideoSrc(`${rootPath}/assets/video.mp4`)
-
 const camera = await Camera.init()
 const worker = await getWorker()
 
 const factory = {
-  async initalize() {
+  async initialize() {
     return Controller.initialize({
       view: new View(),
       worker,
       camera,
+      service,
     })
   },
 }
