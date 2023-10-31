@@ -5,20 +5,27 @@ import "https://unpkg.com/@tensorflow-models/face-landmarks-detection@0.0.1/dist
 
 import Service from "./service.js"
 
-// On the main thread we use window
-// but on worker thread we use self
+let service
 
-const { tf, faceLandmarksDetection } = self
-tf.setBackend("webgl")
+async function init() {
+  // On the main thread we use window
+  // but on worker thread we use self
+  const { tf, faceLandmarksDetection } = self
+  tf.setBackend("webgl")
 
-const service = new Service({ faceLandmarksDetection })
-console.log("loading tf model")
-await service.loadModel()
-console.log("tf model loaded")
-postMessage("READY")
+  service = new Service({ faceLandmarksDetection })
+  console.log("loading tf model")
+  await service.loadModel()
+  console.log("tf model loaded")
+  postMessage("READY")
+}
 
-onmessage = async ({ data: video }) => {
-  const blinked = await service.handBlinked(video)
-  if (!blinked) return
-  postMessage({ blinked })
+onmessage = async ({ data }) => {
+  if (data === "init") {
+    await init()
+  } else {
+    const blinked = await service.handBlinked(data)
+    if (!blinked) return
+    postMessage({ blinked })
+  }
 }

@@ -59,7 +59,6 @@ async function getWorker() {
   return workerMock
 }
 
-const camera = await Camera.init()
 const worker = await getWorker()
 
 const factory = {
@@ -67,7 +66,7 @@ const factory = {
     return Controller.initialize({
       view: new View(),
       worker,
-      camera,
+      camera: new Camera(),
       service,
     })
   },

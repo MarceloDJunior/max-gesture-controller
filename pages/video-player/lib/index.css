@@ -41,9 +41,7 @@ body {
 }
 
 canvas {
-  visibility: hidden;
-  position: absolute;
-  pointer-events: none;
+  display: none;
 }
 
 button {
