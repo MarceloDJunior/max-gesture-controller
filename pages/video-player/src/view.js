@@ -25,8 +25,8 @@ export default class View {
   }
 
   isVideoPaused() {
-    const pausedValue = 2
-    return window.YTPlayer.getPlayerState() === pausedValue
+    const playingValue = 1
+    return window.YTPlayer.getPlayerState() !== playingValue
   }
 
   playVideo() {
@@ -35,10 +35,6 @@ export default class View {
 
   pauseVideo() {
     window.YTPlayer.pauseVideo()
-  }
-
-  enableButton() {
-    this.#btnInit.disabled = false
   }
 
   configureOnBtnClick(fn) {
