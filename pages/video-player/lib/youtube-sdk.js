@@ -20,6 +20,7 @@ function onYouTubeIframeAPIReady() {
     width: "100%",
     playerVars: {
       playsinline: 1,
+      rel: 0,
     },
   })
 
