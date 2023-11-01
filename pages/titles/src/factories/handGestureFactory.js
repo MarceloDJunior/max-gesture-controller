@@ -16,7 +16,8 @@ import {
 
 // eslint-disable-next-line no-undef
 const styler = new PseudoStyler()
-const camera = await Camera.init()
+const camera = new Camera()
+await camera.init()
 
 const factory = {
   async initalize() {
