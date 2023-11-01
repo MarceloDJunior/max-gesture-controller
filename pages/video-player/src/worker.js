@@ -6,6 +6,7 @@ import "https://unpkg.com/@tensorflow-models/face-landmarks-detection@0.0.1/dist
 import Service from "./service.js"
 
 let service
+let hasCapturedFirstBlink = false
 
 async function init() {
   // On the main thread we use window
@@ -25,6 +26,11 @@ onmessage = async ({ data }) => {
     await init()
   } else {
     const blinked = await service.handBlinked(data)
+    if(!hasCapturedFirstBlink) {
+      hasCapturedFirstBlink = true
+      postMessage("STARTED")
+      return
+    }
     if (!blinked) return
     postMessage({ blinked })
   }

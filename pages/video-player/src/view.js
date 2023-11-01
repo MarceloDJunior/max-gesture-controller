@@ -41,7 +41,11 @@ export default class View {
     this.#btnInit.addEventListener("click", fn)
   }
 
-  log(text) {
+  updateStatusText(text) {
     this.#statusElement.innerHTML = text
+  }
+
+  setButtonDisabled(disabled) {
+    this.#btnInit.disabled = disabled
   }
 }
