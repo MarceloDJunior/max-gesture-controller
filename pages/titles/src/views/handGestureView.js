@@ -8,8 +8,8 @@ export default class HandGestureView {
 
   constructor({ timerDelay, fingerLoopUpIndexes, styler }) {
     this.#setScrollThrottle(timerDelay)
-    this.#handsCanvas.width = window.screen.availWidth
-    this.#handsCanvas.height = window.screen.availHeight
+    this.#handsCanvas.width = window.innerWidth
+    this.#handsCanvas.height = window.innerHeight
     this.#fingerLoopUpIndexes = fingerLoopUpIndexes
     this.#styler = styler
 
@@ -27,7 +27,7 @@ export default class HandGestureView {
   }
 
   drawResults(hands) {
-    for (const { keypoints, handedness } of hands) {
+    for (const { keypoints } of hands) {
       if (!keypoints) continue
 
       this.#canvasContext.fillStyle = "rgba(44, 212, 103)"
@@ -40,8 +40,60 @@ export default class HandGestureView {
     }
   }
 
+  #isElementAtPoint(element, x, y) {
+    const errorMargin = 15
+    const rect = element.getBoundingClientRect()
+    return (
+      x >= rect.left - errorMargin &&
+      x <= rect.right + errorMargin &&
+      y >= rect.top - errorMargin &&
+      y <= rect.bottom + errorMargin
+    )
+  }
+
+  #isClickable(element) {
+    const clickableTags = ["A", "INPUT"]
+    const isClickableTag = clickableTags.includes(element.tagName)
+
+    const isButtonOfTypeButton =
+      element.tagName === "BUTTON" && element.getAttribute("type") === "button"
+    const hasClickHandler = typeof element.onclick === "function"
+
+    const hasClickListeners = element.hasAttribute("data-hasclicklisteners")
+
+    return (
+      isClickableTag ||
+      (isButtonOfTypeButton && (hasClickHandler || hasClickListeners))
+    )
+  }
+
+  #getClickableElementAtPoint(x, y, parentElement = null) {
+    let element
+    if (!parentElement) {
+      element = document.elementFromPoint(x, y)
+    } else {
+      element = parentElement
+    }
+
+    if (!element) return null
+
+    if (this.#isClickable(element) && this.#isElementAtPoint(element, x, y)) {
+      return element
+    }
+
+    const children = element.children
+    for (const child of children) {
+      const clickableChild = this.#getClickableElementAtPoint(x, y, child)
+      if (clickableChild) {
+        return clickableChild
+      }
+    }
+
+    return null // No clickable element found at the given point
+  }
+
   clickOnElement(x, y) {
-    const element = document.elementFromPoint(x, y)
+    const element = this.#getClickableElementAtPoint(x, y)
     if (!element) return
 
     const rect = element.getBoundingClientRect()

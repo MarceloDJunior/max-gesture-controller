@@ -68,6 +68,7 @@ export default class HandGestureService {
       // full is the heavier and accurate
       modelType: "lite",
       maxHands: 2,
+      minHandDetectionConfidence: 0.8
     }
     this.#detector = await this.#handPoseDetection.createDetector(
       model,
