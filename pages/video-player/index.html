@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <canvas id="hands"></canvas>
   <div class="container">
     <nav class="nav">
       <a href="/">
@@ -21,16 +22,17 @@
     <div class="video-container">
       <div id="video"></div>
     </div>
-    <canvas></canvas>
+    <canvas id="cameraCanvas"></canvas>
     <div class="button-container">
       <div>
-        <button type="button" id="init">
+        <button type="button" id="init" data-hasclicklisteners>
           Initialize Blink Recognition
         </button>
         <div id="status"></div>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/TSedlar/pseudo-styler@1.0.8/pseudostyler.js"></script>
   <script type="text/javascript" src="./lib/youtube-sdk.js"></script>
   <script src="./src/index.js" type="module"></script>
 </body>

@@ -1,7 +1,7 @@
 export default class View {
   #btnInit = document.querySelector("#init")
   #statusElement = document.querySelector("#status")
-  #videoFrameCanvas = document.querySelector("canvas")
+  #videoFrameCanvas = document.querySelector("#cameraCanvas")
   #canvasContext = this.#videoFrameCanvas.getContext("2d", {
     willReadFrequently: true,
   })
