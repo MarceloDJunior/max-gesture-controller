@@ -32,6 +32,7 @@ export default class Controller {
       if (data === "STARTED") {
         this.#hasStarted = true
         console.log("started detecting blink")
+        return
       }
       const blinked = data.blinked
       this.#blinkCounter += 1
@@ -74,13 +75,14 @@ export default class Controller {
   }
 
   async onBtnStartClick() {
-    this.#view.updateStatusText("Initializing detection...")
+    this.#view.updateStatusText("Preparing blink detection model...")
     this.#view.setButtonDisabled(true)
     await this.#camera.init()
     this.#configureWorker()
   }
 
   #startDetection() {
+    this.#view.updateStatusText("Initializing... This can take some seconds")
     this.#blinkCounter = 0
     this.loop()
   }
