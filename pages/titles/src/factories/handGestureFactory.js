@@ -20,7 +20,7 @@ const camera = new Camera()
 await camera.init()
 
 const factory = {
-  async initalize() {
+  async initialize() {
     return HandGestureController.initialize({
       camera,
       view: new HandGestureView({

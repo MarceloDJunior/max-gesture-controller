@@ -1,4 +1,4 @@
-export default class Controller {
+export default class VideoPlayerController {
   #view
   #worker
   #camera
@@ -16,7 +16,7 @@ export default class Controller {
   }
 
   static async initialize(deps) {
-    const controller = new Controller(deps)
+    const controller = new VideoPlayerController(deps)
     controller.#view.updateStatusText("Not yet detecting eye blink.")
     return controller.init()
   }

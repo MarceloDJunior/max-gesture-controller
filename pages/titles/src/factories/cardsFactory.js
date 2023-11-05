@@ -15,7 +15,7 @@ if (supportsWorkerType()) {
 }
 
 const factory = {
-  async initalize() {
+  async initialize() {
     return CardsController.initialize({
       view: new CardsView(),
       service: new CardsService({

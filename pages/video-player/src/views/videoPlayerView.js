@@ -1,4 +1,4 @@
-export default class View {
+export default class VideoPlayerView {
   #btnInit = document.querySelector("#init")
   #statusElement = document.querySelector("#status")
   #videoFrameCanvas = document.querySelector("#cameraCanvas")

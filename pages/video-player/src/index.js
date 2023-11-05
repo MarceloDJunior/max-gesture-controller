@@ -1,5 +1,5 @@
-import factory from "./factory.js"
+import videoPlayerFactory from "./factories/videoPlayerFactory.js"
 import handGestureFactory from "../../titles/src/factories/handGestureFactory.js"
 
-factory.initialize()
-await handGestureFactory.initalize()
+await videoPlayerFactory.initialize()
+await handGestureFactory.initialize()
