@@ -4,7 +4,7 @@ import "https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.4.0/dist/tf-backend-w
 import "https://unpkg.com/@tensorflow/tfjs-backend-cpu@2.4.0/dist/tf-backend-cpu.js"
 import "https://unpkg.com/@tensorflow-models/face-landmarks-detection@0.0.1/dist/face-landmarks-detection.js"
 
-import Service from "../services/videoPlayerService.js"
+import Service from "../services/faceLandmarksDetectionService.js"
 
 let service
 let hasCapturedFirstBlink = false

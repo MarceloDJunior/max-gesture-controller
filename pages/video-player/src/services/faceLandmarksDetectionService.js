@@ -4,21 +4,12 @@ const { shouldRun } = prepareRunChecker({ timerDelay: 500 })
 
 const EAR_THRESHOLD = 0.27
 
-export default class VideoPlayerService {
+export default class FaceLandmarksDetectionService {
   #model = null
   #faceLandmarksDetection
-  #dbUrl = ""
 
-  constructor({ faceLandmarksDetection, dbUrl }) {
+  constructor({ faceLandmarksDetection }) {
     this.#faceLandmarksDetection = faceLandmarksDetection
-    this.#dbUrl = dbUrl
-  }
-
-  async getMovieById(id) {
-    const response = await fetch(this.#dbUrl)
-    const database = await response.json()
-    const movie = database.find((t) => t.show_id === id)
-    return movie
   }
 
   async loadModel() {

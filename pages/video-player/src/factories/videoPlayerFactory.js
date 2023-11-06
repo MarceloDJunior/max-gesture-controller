@@ -1,13 +1,13 @@
 import Camera from "../../../../lib/shared/camera.js"
 import { supportsWorkerType } from "../../../../lib/shared/util.js"
 import VideoPlayerController from "../controllers/videoPlayerController.js"
-import VideoPlayerService from "../services/videoPlayerService.js"
+import YoutubePlayerService from "../services/youtubePlayerService.js"
 import VideoPlayerView from "../views/videoPlayerView.js"
 
 const [rootPath] = window.location.href.split("/pages/")
 const dbUrl = `${rootPath}/assets/database.json`
 
-const service = new VideoPlayerService({
+const service = new YoutubePlayerService({
   faceLandmarksDetection: window.faceLandmarksDetection,
   dbUrl,
 })
