@@ -44,7 +44,7 @@ body {
   margin: 30px 0 40px;
 }
 
-#cameraCanvas {
+#webcam {
   display: none;
   pointer-events: none;
 }
@@ -78,6 +78,14 @@ button#init {
 }
 
 #hands {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+#facepoints {
   pointer-events: none;
   position: fixed;
   z-index: 9999;
