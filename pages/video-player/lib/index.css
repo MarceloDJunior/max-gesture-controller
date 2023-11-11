@@ -92,3 +92,20 @@ button#init {
   max-width: 100vw;
   max-height: 100vh;
 }
+
+.mode-container {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.options {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.option {
+  margin: 2px 0;
+}
