@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JSExpert Max - BlinkToPlay</title>
-  <link rel="stylesheet" href="./lib/index.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
@@ -21,6 +21,7 @@
       </a>
     </nav>
     <div class="video-container">
+      <button class="hidden-button" onclick="window.YTPlayer.playVideo()"></button>
       <div id="video"></div>
     </div>
     <canvas id="webcam"></canvas>
