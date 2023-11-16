@@ -1,64 +1,47 @@
-# JSExpertMax Gesture Controller - Semana JS Expert 7.0
+# Max Gesture Controller
 
-Seja bem vindo(a) à sétima Semana Javascript Expert. Este é o código inicial para iniciar nossa jornada.
+This project is a web application designed to detect hand and eye gestures and perform corresponding actions on a web page. It utilizes TensorFlow.js for accurate gesture detection.
 
-Marque esse projeto com uma estrela 🌟
+## Features
+- Hand Gesture Detection:
+  - Scroll Gesture: When two fingers are up, the application detects the hand's position on the screen and scrolls accordingly. If the hand is at the top, it scrolls to the top, and if it's at the bottom, it scrolls to the bottom.
+  - Click Gesture: When one finger is up or when a pinch gesture is detected, the application triggers a click action on the hovered element.
+  - Pseudo Styler Integration: The application leverages the pseudo styler library to add hover effects to elements based on the hand position.
+
+- Eye Gesture Detection:
+  - Play/Pause Gesture (Blink Mode): The application detects eye blinks and performs play/pause actions on a YouTube video. Whenever the user blinks, the video toggles between play and pause.
+  - Play/Pause Gesture (Eyes Closed/Open Mode): In this mode, the application pauses the YouTube video when the user closes their eyes and resumes playing when the eyes are open.
 
 ## Preview
 
-<img width=100% src="./initial-template/assets/demo-template-lg.gif">
+## Technologies Used
+- HTML/CSS: Used for designing and styling the web page.
+- JavaScript: Implements the gesture detection logic and interacts with web page elements.
+- TensorFlow: A popular machine learning framework for training and deploying deep learning models.
+- Web Workers: Used to perform heavy operations without blocking the UI. This allows for a responsive user experience while running computationally intensive tasks in the background.
+- Pseudo Styler: A library for applying pseudo styles to HTML elements.
+- YouTube iframe API: Allows integration and control of YouTube videos using an iframe.
 
-## Pre-reqs
+## Installation
+1. Clone the project repository from GitHub.
+2. Install the required dependencies using `npm install`.
+3. Run the application using `npm start`.
 
-- Este projeto foi criado usando Node.js v19.6
-- O ideal é que você use o projeto em ambiente Unix (Linux). Se você estiver no Windows, é recomendado que use o [Windows Subsystem Linux](https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10) pois nas aulas são mostrados comandos Linux que possam não existir no Windows.
+## Usage
+1. Open [http://localhost:3000](http://localhost:3000) in a browser.
+2. Grant necessary camera permissions (if prompted).
+3. Position your hand and/or face within the camera's view.
+4. Perform hand gestures to trigger scroll and click actions on the web page.
+5. Observe real-time gesture detection and corresponding actions.
+6. For eye gestures, follow the specific mode instructions to play/pause the YouTube video.
 
-## Running
-
-- Execute `npm ci` na pasta que contém o arquivo `package.json` para restaurar os pacotes
-- Execute `npm start` e em seguida vá para o seu navegador em [http://localhost:3000](http://localhost:3000) para visualizar a página acima
-
-## Checklist Features
-
-- Titles List
-
-  - [x] - Campo para pesquisa não deve travar ao digitar termo de pesquisa
-  - [x] - Deve desenhar mãos na tela e fazer com que elementos em segundo plano continuem sendo clicáveis 🙌
-  - [x] - Deve disparar scroll up quando usar a palma das mãos abertas 🖐
-  - [x] - Deve disparar scroll down quando usar a palma das mãos fechadas ✊
-  - [x] - Deve disparar click no elemento mais próximo quando usar gesto de pinça 🤏🏻
-  - [x] - Ao mover elementos na tela, deve disparar evento **:hover** em elementos em contexto
-
-- Video Player
-  - [x] - Deve ser possivel de reproduzir ou pausar videos com o piscar de olhos 😁
-  - [x] - Todo processamento de Machine Learning deve ser feito via Web worker
-
-### Desafios
-
-- [] - Aula 01 - Diferenciar piscada de olhos entre olho direito e esquerdo e atualizar log para mostrar qual olho que piscou.
-- [] - Aula 02 - Reconhecer gestos de mãos individuais e printar no log
-- [] - Aula 03 - Corrigir Banner de titulo de video, para ficar atrás do desenho das mãos e se tornar clicável
-- [] - Aula 04 - Usar as mãos virtuais também no Video Player
-
-### Links mostrados nos aulas:
-
-- Reuni todos os links em [referências](./referencias.md)
-
-### Considerações
-
-- Tire suas dúvidas sobre os desafios em nossa comunidade, o objetivo é você aprender de forma divertida. Surgiu dúvidas? Pergunte por lá!
-
-- Ao completar qualquer um dos desafios, envie no canal **#desafios** da comunidade no **Discord**
-
-### FAQ
-
-- browser-sync está lançando erros no Windows e nunca inicializa:
-  - Solução: Trocar o browser-sync pelo http-server.
-    1. instale o **http-server** com `npm i -D http-server`
-    2. no package.json apague todo o comando do `browser-sync` e substitua por `npx http-server .`
-    3. agora o projeto vai estar executando na :8080 então vá no navegador e tente acessar o http://localhost:8080/
-       A unica coisa, é que o projeto não vai reiniciar quando voce alterar algum código, vai precisar dar um F5 na página toda vez que alterar algo
-
-### Créditos ao Layout
-
-- Interface baseada no projeto [Streaming Service](https://codepen.io/Gunnarhawk/pen/vYJEwoM) de [gunnarhawk](https://github.com/Gunnarhawk)
+### References
+- Project initially created during [JS Expert Week 7.0](https://github.com/ErickWendel/semana-javascript-expert07) by [Erick Wendel](https://github.com/ErickWendel).  
+- Layout based on the project [Streaming Service](https://codepen.io/Gunnarhawk/pen/vYJEwoM) by [gunnarhawk](https://github.com/Gunnarhawk)
+- TensorFlow lib: hand-pose-detection: https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection
+- TensorFlow lib: face-landmarks-detection: https://github.com/tensorflow/tfjs-models/tree/master/face-landmarks-detection
+- Blink detection code took from https://hackernoon.com/a-prototype-that-leverages-facial-expressions-to-facilitate-non-vocal-communication
+- TensorFlow HandPoseDetection diagram: https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection#keypoint-diagram
+- Web Workers API: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+- PseudoStyler lib: https://github.com/TSedlar/pseudo-styler
+- Youtube iframe API: https://developers.google.com/youtube/iframe_api_reference
