@@ -94,6 +94,9 @@ button#init {
   z-index: 9999;
   max-width: 100vw;
   max-height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #facepoints {
@@ -102,6 +105,9 @@ button#init {
   z-index: 9999;
   max-width: 100vw;
   max-height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .mode-container {
