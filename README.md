@@ -38,7 +38,7 @@ https://github.com/MarceloDJunior/max-gesture-controller/assets/17832776/532ab9f
 5. Observe real-time gesture detection and corresponding actions.
 6. For eye gestures, follow the specific mode instructions to play/pause the YouTube video.
 
-### References
+## References
 - Project initially created during [JS Expert Week 7.0](https://github.com/ErickWendel/semana-javascript-expert07) by [Erick Wendel](https://github.com/ErickWendel).  
 - Layout based on the project [Streaming Service](https://codepen.io/Gunnarhawk/pen/vYJEwoM) by [gunnarhawk](https://github.com/Gunnarhawk)
 - TensorFlow lib: hand-pose-detection: https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection
