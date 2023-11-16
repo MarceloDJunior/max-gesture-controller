@@ -14,6 +14,9 @@ This project is a web application designed to detect hand and eye gestures and p
 
 ## Preview
 
+https://github.com/MarceloDJunior/max-gesture-controller/assets/17832776/532ab9fe-2ca3-47d4-b9fb-9817bc09125a
+
+
 ## Technologies Used
 - HTML/CSS: Used for designing and styling the web page.
 - JavaScript: Implements the gesture detection logic and interacts with web page elements.
